@@ -1,0 +1,151 @@
+/* ==========================================================================
+   themes.css - styles the GENERATED COVER PAGE itself (the A4 sheet), built
+   from the same block model pdf.js draws. Keep visual choices here in sync
+   with pdf.js's constants where it matters (margins, relative sizes) - see
+   the comment at the top of templates.js for the shared block vocabulary.
+   ========================================================================== */
+
+.a4-scale-wrapper { transform-origin: top center; }
+
+.a4-page {
+  width: 210mm;
+  height: 297mm;
+  background: #fff;
+  color: #101014;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0,0,0,.45), 0 0 0 1px rgba(0,0,0,.06);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.cp-content-box {
+  position: absolute;
+  inset: 0;
+  padding: 20mm 20mm 18mm;
+  overflow: hidden; /* safety net: fitContentToPage() keeps real content inside, this just guarantees no bleed */
+}
+
+.cp-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  transform-origin: top center;
+}
+
+/* -------------------------------------------------- page-level decoration */
+.cp-bg-tint { background: color-mix(in srgb, var(--cp-accent, #1a3c6e) 4%, white); }
+
+.cp-border-frame-thin::before, .cp-border-frame-double::before {
+  content: ''; position: absolute; inset: 9mm; border: 1pt solid var(--cp-accent, #1a3c6e); pointer-events: none;
+}
+.cp-border-frame-double::after {
+  content: ''; position: absolute; inset: 10.6mm; border: .6pt solid var(--cp-accent, #1a3c6e); pointer-events: none;
+}
+
+/* corner marks: real elements (not ::before/::after) so all 4 corners can be
+   drawn - see mount() in preview.js, which matches pdf.js's drawPageDecoration */
+.cp-corner-marks { position: absolute; inset: 0; pointer-events: none; display: none; }
+.cp-border-corner .cp-corner-marks { display: block; }
+.cp-corner { position: absolute; width: 14mm; height: 14mm; border-color: var(--cp-accent, #1a3c6e); border-style: solid; border-width: 0; }
+.cp-corner-tl { top: 9mm; left: 9mm; border-top-width: 1.4pt; border-left-width: 1.4pt; }
+.cp-corner-tr { top: 9mm; right: 9mm; border-top-width: 1.4pt; border-right-width: 1.4pt; }
+.cp-corner-bl { bottom: 9mm; left: 9mm; border-bottom-width: 1.4pt; border-left-width: 1.4pt; }
+.cp-corner-br { bottom: 9mm; right: 9mm; border-bottom-width: 1.4pt; border-right-width: 1.4pt; }
+
+/* ------------------------------------------------------------ typography */
+.cp-content, .cp-content * { font-family: var(--cp-font-secondary, 'DM Sans', sans-serif); }
+.cp-a-left { text-align: left; }
+.cp-a-center { text-align: center; }
+.cp-a-right { text-align: right; }
+.cp-c-ink { color: #101014; }
+.cp-c-accent { color: var(--cp-accent, #1a3c6e); }
+.cp-c-muted { color: #5a5f6e; }
+.cp-c-white { color: #fff; }
+.cp-f-primary, .cp-f-primary * { font-family: var(--cp-font-primary); }
+.cp-f-secondary, .cp-f-secondary * { font-family: var(--cp-font-secondary); }
+.cp-f-mono, .cp-f-mono * { font-family: var(--cp-font-mono); }
+/* Per-section override: the "Submitted to" block carries fontKey:"teacher"
+   (set by templates.js), so this class beats .cp-f-secondary on its container. */
+.cp-f-teacher, .cp-f-teacher * { font-family: var(--cp-font-teacher, var(--cp-font-secondary)); }
+
+.cp-text-wrap { line-height: 1.32; }
+.cp-text-line { line-height: 1.32; overflow-wrap: break-word; }
+
+/* One-line info lines: pdf.js shrinks text to fit instead of wrapping; these
+   helpers let preview.js measure natural width, then either shrink the font
+   (.cp-nowrap stays applied) or fall back to wrapping (.cp-nowrap-off). */
+.cp-nowrap { white-space: nowrap; }
+.cp-nowrap-off { white-space: normal; }
+
+.cp-space { flex-shrink: 0; }
+
+/* ------------------------------------------------------------------- logo */
+.cp-logo-wrap { display: flex; margin-bottom: 3mm; }
+.cp-logo-wrap.cp-a-left { justify-content: flex-start; }
+.cp-logo-wrap.cp-a-center { justify-content: center; }
+.cp-logo-box { display: flex; align-items: center; justify-content: center; }
+.cp-logo-img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.cp-logo-placeholder { border: 1pt solid #8a8f9e; border-radius: 50%; }
+.cp-logo-initial { font-family: var(--cp-font-primary); font-weight: 700; color: #8a8f9e; font-size: 40%; }
+
+/* "seal" frame: an heraldic double ring around the crest/logo (Ivy Heritage) */
+.cp-logo-seal { border-radius: 50%; box-shadow: 0 0 0 1pt var(--cp-accent, #1a3c6e), 0 0 0 3pt #fff, 0 0 0 3.6pt var(--cp-accent, #1a3c6e); }
+.cp-logo-seal img.cp-logo-img { border-radius: 50%; }
+.cp-logo-seal.cp-logo-placeholder { border: none; }
+
+/* ------------------------------------------------------------------ rule */
+.cp-rule { margin: 3mm auto; border: none; border-top: .75pt solid #101014; }
+.cp-rule-w-full { width: 100%; }
+.cp-rule-w-short { width: 42%; }
+.cp-rule-bold { border-top-width: 1.4pt; }
+.cp-rule-double { border-bottom: .75pt solid currentColor; padding-bottom: 1.6mm; }
+.cp-rc-accent { border-color: var(--cp-accent, #1a3c6e); color: var(--cp-accent, #1a3c6e); }
+.cp-rc-muted { border-color: #8a8f9e; color: #8a8f9e; }
+.cp-rc-ink { border-color: #101014; color: #101014; }
+
+/* ----------------------------------------------------------------- table */
+.cp-table-wrap { margin-bottom: 3mm; }
+.cp-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.cp-table.cp-border-thin th, .cp-table.cp-border-thin td { border: .6pt solid #8a8f9e; }
+.cp-table.cp-border-bold th, .cp-table.cp-border-bold td { border: 1.3pt solid #101014; }.cp-table th { background: #cccccc; text-align: left; font-size: 12pt; padding: 2.2mm 3mm 1.6mm; font-weight: 700; }
+  .cp-table td { vertical-align: top; padding: 2mm 3mm 2.5mm; font-size: 11pt; }
+.cp-cell-line { margin-bottom: .6mm; }
+.cp-table.cp-head-plain th { background: none; color: var(--cp-accent, #1a3c6e); padding-bottom: 1mm; }
+
+/* borderless "columns" variant (Modern Minimal) */
+.cp-cols { display: flex; gap: 6mm; margin-bottom: 3mm; }.cp-col { flex: 1; font-size: 11pt; }
+  .cp-col-head { font-weight: 700; color: var(--cp-accent, #1a3c6e); font-size: 12pt; margin-bottom: 1.2mm; }
+.cp-col-line { margin-bottom: .6mm; }
+
+/* ------------------------------------------------------------------ band */
+.cp-band {
+  background: var(--cp-accent, #1a3c6e); color: #fff; font-weight: 700;
+  margin: 0 -20mm 2mm; padding: 3mm 20mm; width: calc(100% + 40mm);
+}
+
+/* -------------------------------------------------------------- cards row */
+.cp-cards { display: flex; gap: 6mm; margin-bottom: 3mm; }
+.cp-card { flex: 1; background: color-mix(in srgb, var(--cp-accent, #1a3c6e) 7%, white); border-top: 2.5pt solid var(--cp-accent, #1a3c6e); padding: 4mm; }.cp-card-title { font-weight: 700; font-family: var(--cp-font-primary); margin-bottom: 1.6mm; font-size: 12.5pt; }
+/* Teacher-font override: card titles resolve the override pairing's PRIMARY
+   (pdf.js draws them with itemFamily(ctx,'primary',...)), body lines its
+   secondary via the .cp-f-teacher rule above. */
+.cp-card.cp-f-teacher .cp-card-title { font-family: var(--cp-font-teacher-title, var(--cp-font-primary)); }
+  .cp-card-line { font-size: 11.2pt; margin-bottom: .6mm; }
+
+/* --------------------------------------------------------------- metaStrip */
+.cp-metastrip { display: flex; border-top: 1pt solid #8a8f9e; border-bottom: 1pt solid #8a8f9e; padding: 2.4mm 0; margin-bottom: 4mm; }
+.cp-metaitem { flex: 1; font-family: var(--cp-font-mono); }
+.cp-metalabel { font-size: 8pt; color: #5a5f6e; margin-bottom: .8mm; }
+.cp-metavalue { font-size: 11.5pt; font-weight: 700; }
+
+/* ---------------------------------------------------------------- pairBlock */
+.cp-pair { display: flex; gap: 8mm; margin-bottom: 3mm; }
+.cp-pair.cp-pair-solo { justify-content: center; }
+.cp-pair.cp-pair-solo .cp-pair-col { flex: 0 0 70%; }
+.cp-pair-col { flex: 1; text-align: center; }
+.cp-pair-title { font-weight: 700; color: var(--cp-accent, #1a3c6e); font-size: 12pt; margin-bottom: 1.2mm; }
+/* Pair titles draw with the override pairing's SECONDARY in pdf.js
+   (itemFamily(ctx, b.font='secondary', ...)), matching --cp-font-teacher. */
+.cp-pair-col.cp-f-teacher .cp-pair-title { font-family: var(--cp-font-teacher, var(--cp-font-secondary)); }
+.cp-pair-line { font-size: 11.2pt; margin-bottom: .6mm; }
+.cp-pair-divider { width: 0; border-left: .6pt solid #8a8f9e; }

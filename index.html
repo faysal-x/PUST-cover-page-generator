@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PUST Cover Page Generator</title>
+<meta name="description" content="Create a polished, print-ready A4 university cover page for Pabna University of Science and Technology (PUST). Search teachers and departments, pick a design, and export a sharp vector PDF — free, no sign-up.">
+<meta name="keywords" content="PUST cover page, PUST assignment cover, Pabna University of Science and Technology, lab report cover page, assignment front page, university cover page generator, PUST lab report">
+<meta name="author" content="PUST Cover Page Generator">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0f1117">
+<link rel="canonical" href="https://pustcover.example.com/">
+
+<!-- Open Graph / social sharing -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PUST Cover Page Generator">
+<meta property="og:title" content="PUST Cover Page Generator – Free A4 Assignment & Lab Report Cover Maker">
+<meta property="og:description" content="Make a professional PUST cover page in seconds: searchable teachers & departments, 7 classic designs, true vector PDF export. Free and no sign-up.">
+<meta property="og:url" content="https://pustcover.example.com/">
+<meta property="og:image" content="https://pustcover.example.com/og-cover.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PUST Cover Page Generator – Free A4 Cover Maker">
+<meta name="twitter:description" content="Searchable PUST teachers & departments, 7 classic designs, vector PDF export. Free.">
+<meta name="twitter:image" content="https://pustcover.example.com/og-cover.png">
+
+<!-- Structured data for rich results -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "PUST Cover Page Generator",
+  "url": "https://pustcover.example.com/",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Any",
+  "description": "Free online cover page generator for Pabna University of Science and Technology (PUST) students: searchable teachers and departments, multiple classic designs, and true vector PDF export.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BDT" },
+  "featureList": [
+    "Searchable PUST teacher and department suggestions",
+    "Official PUST logo built in",
+    "7 cover page designs",
+    "Vector PDF export at exact A4 size",
+    "Works offline once loaded"
+  ]
+}
+</script>
+<link rel="icon" type="image/png" href="assets/pust-logo.png">
+<link rel="apple-touch-icon" href="assets/pust-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/themes.css">
+<link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body>
+
+<!-- Icon sprite: inline SVG symbols so buttons stay iconographic without an icon font. -->
+<svg id="icon-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-design" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18h1.6a2 2 0 0 0 1.7-3l-.5-.9a1.6 1.6 0 0 1 1.4-2.4H18a3 3 0 0 0 3-3A9 9 0 0 0 12 3Z"/><circle cx="7.5" cy="11.5" r="1.2"/><circle cx="11" cy="7.5" r="1.2"/><circle cx="15.5" cy="9" r="1.2"/></symbol>
+  <symbol id="i-content" viewBox="0 0 24 24"><path d="M4 6h11M4 12h16M4 18h8"/><path d="M17.5 16.5 20 19l2.5-2.5"/></symbol>
+  <symbol id="i-reset" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.6-5.9"/><path d="M4 4v4.5h4.5"/></symbol>
+  <symbol id="i-save" viewBox="0 0 24 24"><path d="M5 4h11l3 3v13H5z"/><path d="M9 4v5h6V4"/><path d="M8 20v-6h8v6"/></symbol>
+  <symbol id="i-load" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+  <symbol id="i-pdf" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></symbol>
+  <symbol id="i-print" viewBox="0 0 24 24"><path d="M7 9V4h10v5"/><path d="M7 19H5a2 2 0 0 1-2-2v-5h18v5a2 2 0 0 1-2 2h-2"/><path d="M7 15h10v5H7z"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-fit" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-logo" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="3.5"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24"><path d="M4 20h4l10-10a2.5 2.5 0 0 0-3.5-3.5L4.5 16.5z"/><path d="M13.5 6.5 17 10"/></symbol>
+  <symbol id="i-vector" viewBox="0 0 24 24"><path d="M12 3.5 14.7 9l6.3.9-4.5 4.4 1 6.2-5.5-2.9-5.5 2.9 1-6.2L3 9.9 9.3 9z"/></symbol>
+</svg>
+
+<div id="app">
+
+  <!-- ============================================================ TOP BAR -->
+  <header id="app-bar">
+    <div id="brand">
+      <span id="brand-mark"><img src="assets/pust-logo.png" alt=""></span>
+      <span id="brand-text">
+        <span id="brand-title" title="Pabna University of Science and Technology">PUST</span>
+      </span>
+    </div>
+    <div id="app-bar-meta">
+      <span class="spec-pill" title="Every page is generated at exact A4 proportions">
+        <span class="spec-dot"></span>ISO 216 · A4 210 × 297 mm
+      </span>
+    </div>
+  </header>
+
+  <div id="workspace">
+
+    <!-- ========================================================== SIDEBAR -->
+    <aside id="sidebar" aria-label="Cover page editor">
+
+      <header id="sidebar-header">
+        <div id="sidebar-header-meta">
+          <span class="chip chip-live"><span class="chip-dot"></span> Live preview</span>
+          <span class="chip chip-quiet"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-vector"></use></svg> Vector PDF</span>
+        </div>
+        <h1>
+          <span class="h1-eyebrow">Pabna University of Science and Technology</span>
+          <span class="h1-title">By <em>Vengeance</em></span>
+        </h1>
+        <p class="hero-credit">By Vengeance</p>
+        <button type="button" id="close-sidebar-btn">View preview &rarr;</button>
+      </header>
+
+      <nav id="sidebar-tabs" role="tablist" aria-label="Editor sections">
+        <button type="button" role="tab" data-tab="design" aria-selected="true">
+          <svg class="icon icon-sm" aria-hidden="true"><use href="#i-design"></use></svg><span>Design</span>
+        </button>
+        <button type="button" role="tab" data-tab="content" aria-selected="false">
+          <svg class="icon icon-sm" aria-hidden="true"><use href="#i-content"></use></svg><span>Metadata</span>
+        </button>
+      </nav>
+
+      <div id="form-scroll">
+
+        <!-- ==================================================== DESIGN TAB -->
+        <div class="tab-panel" data-tab-panel="design">
+
+          <section class="side-section">
+            <h2 class="section-label">01 · Template</h2>
+            <div id="template-grid" class="template-grid"></div>
+          </section>
+
+          <section class="side-section">
+            <h2 class="section-label">02 · Customize</h2>
+
+            <div class="field">
+              <label id="accent-label">Accent color</label>
+              <div id="accent-swatches" class="swatch-row" role="group" aria-labelledby="accent-label"></div>
+              <div class="swatch-custom">
+                <input type="color" id="accent-custom" data-cbind="accent" aria-label="Custom accent color">
+                <span class="swatch-custom-hint">Custom color</span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="font-pairing">Font pairing</label>
+              <select id="font-pairing" data-cbind="font"></select>
+            </div>
+
+            <div class="input-row">
+              <div class="field">
+                <label for="border-style">Page border</label>
+                <select id="border-style" data-cbind="border"></select>
+              </div>
+              <div class="field">
+                <label for="background-style">Background</label>
+                <select id="background-style" data-cbind="background"></select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="logo-size">Logo size</label>
+              <select id="logo-size" data-cbind="logoSize"></select>
+            </div>
+
+            <div class="field">
+              <label for="info-fit-mode">Long info lines</label>
+              <select id="info-fit-mode" data-cbind="infoFit"></select>
+            </div>
+
+            <div class="field">
+              <label for="teacher-font">"Submitted to" font</label>
+              <select id="teacher-font" data-cbind="teacherFont"></select>
+            </div>
+
+            <div class="field">
+              <label>Sections on the page</label>
+              <div class="toggle-grid">
+                <label class="toggle"><input type="checkbox" data-show="logo"><span>Logo</span></label>
+                <label class="toggle"><input type="checkbox" data-show="faculty"><span>Faculty</span></label>
+                <label class="toggle"><input type="checkbox" data-show="courseInfo"><span>Course info</span></label>
+                <label class="toggle"><input type="checkbox" data-show="date"><span>Submission date</span></label>
+                <label class="toggle"><input type="checkbox" data-show="studentInfo"><span>Student info</span></label>
+                <label class="toggle"><input type="checkbox" data-show="teacherInfo"><span>Teacher info</span></label>
+              </div>
+            </div>
+          </section>
+
+          <section class="side-section">
+            <h2 class="section-label">03 · Logo</h2>
+            <div id="logo-dropzone" class="dropzone" tabindex="0" role="button" aria-label="Upload a logo image (PNG or JPG)">
+              <div id="logo-preview-wrap" hidden>
+                <img id="logo-preview-img" alt="Logo preview">
+                <button type="button" id="logo-remove-btn">Remove</button>
+              </div>
+              <div id="logo-dropzone-empty">
+                <p>Drag &amp; drop a PNG or JPG, or</p>
+                <button type="button" id="logo-browse-btn">Browse file</button>
+                <input type="file" id="logo-file-input" accept="image/png,image/jpeg" hidden>
+              </div>
+            </div>
+            <div class="field">
+              <label for="logo-url">...or paste an image URL</label>
+              <input type="text" id="logo-url" placeholder="https://example.com/logo.png" inputmode="url">
+            </div>
+            <button type="button" id="btn-pust-logo">
+              <svg class="icon icon-sm" aria-hidden="true"><use href="#i-logo"></use></svg>
+              <span>Use official PUST logo</span>
+            </button>
+            <p id="pdf-charset-warning" class="field-warning" hidden></p>
+          </section>
+        </div>
+
+        <!-- =================================================== CONTENT TAB -->
+        <div class="tab-panel" data-tab-panel="content" hidden>
+
+          <section class="side-section">
+            <h2 class="section-label">University</h2>
+            <div class="field">
+              <label for="f-uniName">University name</label>
+              <input type="text" id="f-uniName" data-bind="uniName" data-combo="university" autocomplete="off">
+              <span id="hint-uniName" class="field-hint" hidden></span>
+            </div>
+            <div class="input-row">
+              <div class="field"><label for="f-uniDept">Department</label><input type="text" id="f-uniDept" data-bind="uniDept" data-combo="department" autocomplete="off"></div>
+              <div class="field"><label for="f-uniFaculty">Faculty</label><input type="text" id="f-uniFaculty" data-bind="uniFaculty" data-combo="faculty" autocomplete="off"></div>
+            </div>
+          </section>
+
+          <section class="side-section">
+            <h2 class="section-label">Course</h2>
+            <div class="input-row">
+              <div class="field">
+                <label for="f-courseTitle">Course title</label>
+                <input type="text" id="f-courseTitle" data-bind="courseTitle" autocomplete="off">
+              </div>
+              <div class="field"><label for="f-courseCode">Course code</label><input type="text" id="f-courseCode" data-bind="courseCode" autocomplete="off"></div>
+            </div>
+            <span id="hint-courseTitle" class="field-hint" hidden></span>
+            <div class="field">
+              <label for="f-docType">Document type</label>
+              <select id="f-docType" data-bind="docType"></select>
+            </div>
+            <div class="field" id="f-docTypeCustom-wrap" hidden>
+              <label for="f-docTypeCustom">Custom document type</label>
+              <input type="text" id="f-docTypeCustom" data-bind="docTypeCustom" autocomplete="off">
+            </div>
+          </section>
+
+          <section class="side-section">
+            <h2 class="section-label">Student</h2>
+            <div class="field">
+              <label for="f-stuName">Full name</label>
+              <input type="text" id="f-stuName" data-bind="stuName" autocomplete="off">
+              <span id="hint-stuName" class="field-hint" hidden></span>
+            </div>
+            <div class="input-row">
+              <div class="field"><label for="f-stuRoll">Roll</label><input type="text" id="f-stuRoll" data-bind="stuRoll" autocomplete="off"></div>
+              <div class="field"><label for="f-stuReg">Registration no.</label><input type="text" id="f-stuReg" data-bind="stuReg" autocomplete="off"></div>
+            </div>
+            <div class="input-row">
+              <div class="field"><label for="f-stuSession">Session</label><input type="text" id="f-stuSession" data-bind="stuSession" data-combo="session" autocomplete="off" placeholder="e.g. 2023-24"></div>
+              <div class="field"><label for="f-stuYear">Year</label><input type="text" id="f-stuYear" data-bind="stuYear" data-combo="year" autocomplete="off" placeholder="e.g. 2nd Year"></div>
+            </div>
+            <div class="input-row">
+              <div class="field"><label for="f-stuSemester">Semester</label><input type="text" id="f-stuSemester" data-bind="stuSemester" data-combo="semester" autocomplete="off" placeholder="e.g. 1st Semester"></div>
+              <div class="field"><label for="f-stuDept">Department</label><input type="text" id="f-stuDept" data-bind="stuDept" data-combo="department" autocomplete="off"></div>
+            </div>
+            <div class="field"><label for="f-stuUni">University</label><input type="text" id="f-stuUni" data-bind="stuUni" data-combo="university" autocomplete="off"></div>
+          </section>
+
+          <section class="side-section">
+            <h2 class="section-label">Teacher</h2>
+            <div class="input-row">
+              <div class="field"><label for="f-tchName">Name</label><input type="text" id="f-tchName" data-bind="tchName" data-combo="teacher" autocomplete="off"></div>
+              <div class="field">
+                <label for="f-tchDesignation">Designation</label>
+                <input type="text" id="f-tchDesignation" data-bind="tchDesignation" data-combo="designation" autocomplete="off">
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="field"><label for="f-tchDept">Department</label><input type="text" id="f-tchDept" data-bind="tchDept" data-combo="department" autocomplete="off"></div>
+              <div class="field"><label for="f-tchFaculty">Faculty</label><input type="text" id="f-tchFaculty" data-bind="tchFaculty" data-combo="faculty" autocomplete="off"></div>
+            </div>
+            <div class="field"><label for="f-tchUni">University</label><input type="text" id="f-tchUni" data-bind="tchUni" data-combo="university" autocomplete="off"></div>
+          </section>
+
+          <section class="side-section">
+            <h2 class="section-label">Submission</h2>
+            <div class="field"><label for="f-subDate">Date</label><input type="date" id="f-subDate" data-bind="subDate"></div>
+            <div class="field">
+              <label for="f-subDateCustom">Optional custom text (replaces the date line)</label>
+              <input type="text" id="f-subDateCustom" data-bind="subDateCustom" autocomplete="off" placeholder="e.g. Submitted during Spring 2026">
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <footer id="sidebar-footer">
+        <div id="footer-actions-row">
+          <button type="button" id="btn-reset">
+            <svg class="icon icon-sm" aria-hidden="true"><use href="#i-reset"></use></svg><span>Reset</span>
+          </button>
+          <button type="button" id="btn-save-project">
+            <svg class="icon icon-sm" aria-hidden="true"><use href="#i-save"></use></svg><span>Save</span>
+          </button>
+          <button type="button" id="btn-load-project">
+            <svg class="icon icon-sm" aria-hidden="true"><use href="#i-load"></use></svg><span>Load</span>
+          </button>
+          <input type="file" id="load-project-input" accept="application/json" hidden>
+        </div>
+        <button type="button" id="btn-pdf">
+          <span class="btn-sheen" aria-hidden="true"></span>
+          <svg class="icon" aria-hidden="true"><use href="#i-pdf"></use></svg>
+          <span>Download PDF</span>
+          <span class="btn-tag">A4</span>
+        </button>
+        <p id="autosave-note"><span class="spec-dot"></span> Work is auto-saved in this browser</p>
+      </footer>
+    </aside>
+
+    <!-- ============================================================ STAGE -->
+    <main id="stage">
+      <div id="stage-bar">
+        <span class="chip chip-live"><span class="chip-dot"></span> Live A4 draft</span>
+        <span class="spec-pill">210 × 297 mm</span>
+        <span class="stage-note"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"></use></svg> Print-ready proportions</span>
+      </div>
+
+      <div id="preview-area" aria-label="Cover page preview"></div>
+
+      <!-- Mobile drawer trigger: an in-flow row of #stage so it never covers
+           the sheet. It is display:none above the 820px breakpoint. -->
+      <button type="button" id="mobile-menu-btn" aria-expanded="false" aria-controls="sidebar">
+        <svg class="icon" aria-hidden="true"><use href="#i-edit"></use></svg>
+        <span>Edit Details</span>
+      </button>
+
+      <nav id="stage-dock" aria-label="Preview controls">
+        <div class="dock-group">
+          <button type="button" id="zoom-out" title="Zoom out" aria-label="Zoom out">
+            <svg class="icon icon-sm" aria-hidden="true"><use href="#i-minus"></use></svg>
+          </button>
+          <span id="zoom-label" aria-live="polite">Fit</span>
+          <button type="button" id="zoom-in" title="Zoom in" aria-label="Zoom in">
+            <svg class="icon icon-sm" aria-hidden="true"><use href="#i-plus"></use></svg>
+          </button>
+        </div>
+        <div class="dock-sep" aria-hidden="true"></div>
+        <button type="button" id="zoom-reset" class="dock-text-btn">
+          <svg class="icon icon-sm" aria-hidden="true"><use href="#i-fit"></use></svg><span>Fit view</span>
+        </button>
+        <div class="dock-sep" aria-hidden="true"></div>
+        <button type="button" id="quick-print" class="dock-text-btn dock-primary">
+          <svg class="icon icon-sm" aria-hidden="true"><use href="#i-print"></use></svg><span>Print</span>
+        </button>
+      </nav>
+    </main>
+  </div>
+
+  <footer id="site-footer">
+    <span class="site-footer-credit">By Vengeance</span>
+  </footer>
+</div>
+
+<div id="toast-region" aria-live="polite"></div>
+
+<div id="modal-overlay" hidden>
+  <div id="modal-box" role="alertdialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-body">
+    <h2 id="modal-title"></h2>
+    <p id="modal-body"></p>
+    <div id="modal-actions">
+      <button type="button" id="modal-cancel"></button>
+      <button type="button" id="modal-confirm"></button>
+    </div>
+  </div>
+</div>
+
+<script src="assets/vendor/pdf-lib.min.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/pust-data.js"></script>
+<script src="js/templates.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/combo.js"></script>
+<script src="js/preview.js"></script>
+<script src="js/pdf.js"></script>
+<script src="js/app.js"></script>
+<script src="js/ui.js"></script>
+</body>
+</html>

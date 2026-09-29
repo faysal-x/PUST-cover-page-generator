@@ -1,0 +1,72 @@
+/* ==========================================================================
+   print.css - browser printing (Ctrl/Cmd+P). The PDF download (pdf.js) is
+   the primary, recommended path since it produces true vector text with no
+   dependency on the browser's print engine - this stylesheet is a secondary
+   convenience for people who prefer "File > Print > Save as PDF".
+
+   Only the A4 sheet survives: the app bar, sidebar, stage bar, dock and
+   overlays are all removed, and the shell's grid is flattened back to a
+   plain block flow so the page prints at its real 210mm x 297mm size.
+   ========================================================================== */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html, body {
+    height: auto !important;
+    overflow: visible !important;
+    background: #fff !important;
+  }
+
+  #app-bar,
+  #site-footer,
+  #sidebar,
+  #mobile-menu-btn,
+  #stage-bar,
+  #stage-dock,
+  #toast-region,
+  #modal-overlay,
+  #icon-sprite {
+    display: none !important;
+  }
+
+  #app, #workspace, #stage {
+    display: block !important;
+    height: auto !important;
+    min-height: 0 !important;
+    background: #fff !important;
+  }
+
+  #preview-area {
+    display: block !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: #fff !important;
+  }
+
+  .a4-scale-wrapper {
+    transform: none !important;
+  }
+
+  /* ui.js sizes this box to the on-screen (scaled) sheet; in print the sheet
+     is full size, so drop the inline width/height or it would spill a blank
+     second page. */
+  .a4-stage-fit {
+    width: auto !important;
+    height: auto !important;
+  }
+
+  .a4-page {
+    box-shadow: none !important;
+    margin: 0 !important;
+    width: 210mm !important;
+    height: 297mm !important;
+    page-break-after: avoid;
+  }
+
+  .cp-content {
+    transform: none !important;
+  }
+}
